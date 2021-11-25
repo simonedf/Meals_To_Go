@@ -3,9 +3,14 @@ import { Text, StyleSheet } from "react-native";
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
-const Title = styled.Text`
+//Styled Component
+const Title = styled.(Text)`
   padding: 16px;
 `;
+
+const RestaurantCard = styled(Card)``;
+const RestaurantCardCover = styled(Card.Cover)``;
+  
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
     name = "Some Restaurant",
