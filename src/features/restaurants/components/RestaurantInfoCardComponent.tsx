@@ -3,6 +3,9 @@ import { Text } from "react-native";
 import styled from "styled-components/native";
 import { Card } from "react-native-paper";
 
+// type Restaurant = { name: string };
+// type PropsType = { restaurant: Restaurant };
+
 //Styled Component
 const RestaurantCard = styled(Card)`
   background-color: ${(props) => props.theme.colors.bg.primary};
