@@ -3,6 +3,7 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurantsScreen";
 import { theme } from "./src/infrastructure/theme";
+import { SvgXml } from "react-native-svg";
 
 //Fonts Import
 import {
@@ -12,7 +13,6 @@ import {
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
 
 export default function App() {
-  
   //Load Font into APP
   const [oswaldLoaded] = useOswald({
     Oswald_400Regular,
