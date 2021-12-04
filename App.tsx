@@ -3,7 +3,6 @@ import React from "react";
 import { ThemeProvider } from "styled-components/native";
 import { RestaurantsScreen } from "./src/features/restaurants/screens/restaurantsScreen";
 import { theme } from "./src/infrastructure/theme";
-import { SvgXml } from "react-native-svg";
 
 //Fonts Import
 import {
