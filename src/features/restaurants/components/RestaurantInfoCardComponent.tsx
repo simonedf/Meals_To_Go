@@ -5,7 +5,7 @@ import { Card } from "react-native-paper";
 import { SvgXml } from "react-native-svg";
 import star from "../../../../assets/star";
 import openIcon from "../../../../assets/openIcon";
-import { Spacer } from "./spacer/spacerComponent";
+import { Spacer } from "../../../components/spacer/spacerComponent";
 
 // type Restaurant = { name: string };
 // type PropsType = { restaurant: Restaurant };
