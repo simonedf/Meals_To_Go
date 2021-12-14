@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import styled from "styled-components/native";
 import { RestaurantInfoCard } from "../components/RestaurantInfoCardComponent";
-import { Item } from "react-native-paper/lib/typescript/components/List/List";
+import { Spacer } from "../../../components/spacer/spacerComponent";
 
 const SafeArea = styled(SafeAreaView)`
   flex: 1;
@@ -21,12 +21,18 @@ const SearchContainer = styled.View`
   padding: ${(props) => props.theme.space[3]};
 `;
 
+const RestaurantList = styled(FlatList).attrs({
+  contentContainerStyle: {
+    padding: 16,
+  },
+})``;
+
 export const RestaurantsScreen = () => (
   <SafeArea>
     <SearchContainer>
       <Searchbar />
     </SearchContainer>
-    <FlatList
+    <RestaurantList
       data={[
         { name: 1 },
         { name: 2 },
@@ -39,7 +45,11 @@ export const RestaurantsScreen = () => (
         { name: 9 },
         { name: 10 },
       ]}
-      renderItem={() => <RestaurantInfoCard />}
+      renderItem={() => (
+        <Spacer position="bottom" size="large">
+          <RestaurantInfoCard />
+        </Spacer>
+      )}
       keyExtractor={(Item) => Item.name}
       contentContainerStyle={{ padding: 16 }}
     />
