@@ -16,6 +16,7 @@ import {
   Oswald_400Regular,
 } from "@expo-google-fonts/oswald";
 import { useFonts as useLato, Lato_400Regular } from "@expo-google-fonts/lato";
+
 import { RestaurantInfoCard } from "./src/features/restaurants/components/RestaurantInfoCardComponent";
 
 export default function App() {
@@ -34,6 +35,13 @@ export default function App() {
 
   const Tab = createBottomTabNavigator();
 
+  const TAB_ICON = {
+    Restaurant: "md-restaurant",
+    Map: "md-map",
+    Settings: "md-settings",
+  };
+
+  //Testing Screen
   const Settings = () => (
     <SafeArea>
       <Text>Settings</Text>
@@ -46,11 +54,26 @@ export default function App() {
     </SafeArea>
   );
 
+  const createScreenOptions = ({ route }) => {
+    const iconName = TAB_ICON[route.name];
+    return {
+      tabBarIcon: ({ size, color }) => (
+        <Ionicons name={iconName} size={size} color={color} />
+      ),
+    };
+  };
+
   return (
     <>
       <ThemeProvider theme={theme}>
         <NavigationContainer>
-          <Tab.Navigator>
+          <Tab.Navigator
+            screenOptions={createScreenOptions}
+            tabBarOptions={{
+              activeTintColor: "tomato",
+              inactiveTintColor: "gray",
+            }}
+          >
             <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
             <Tab.Screen name="Map" component={Map} />
             <Tab.Screen name="Settings" component={Settings} />
