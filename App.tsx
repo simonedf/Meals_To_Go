@@ -10,8 +10,6 @@ import { Ionicons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
 
-import { restaurantRequest } from "./src/services/restaurants/restaurantsService";
-
 //Fonts Import
 import {
   useFonts as useOswald,
@@ -71,10 +69,11 @@ export default function App() {
         <NavigationContainer>
           <Tab.Navigator
             screenOptions={createScreenOptions}
-            tabBarOptions={{
-              activeTintColor: "tomato",
-              inactiveTintColor: "gray",
-            }}
+            //To be moved to the tabBarIcons
+            // tabBarOptions={{
+            //   activeTintColor: "tomato",
+            //   inactiveTintColor: "gray",
+            // }}
           >
             <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
             <Tab.Screen name="Map" component={Map} />
