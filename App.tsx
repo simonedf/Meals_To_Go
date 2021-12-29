@@ -9,6 +9,7 @@ import { Ionicons } from "@expo/vector-icons";
 
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { NavigationContainer } from "@react-navigation/native";
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurantsContex";
 
 //Fonts Import
 import {
@@ -66,20 +67,22 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <NavigationContainer>
-          <Tab.Navigator
-            screenOptions={createScreenOptions}
-            //To be moved to the tabBarIcons
-            // tabBarOptions={{
-            //   activeTintColor: "tomato",
-            //   inactiveTintColor: "gray",
-            // }}
-          >
-            <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
-            <Tab.Screen name="Map" component={Map} />
-            <Tab.Screen name="Settings" component={Settings} />
-          </Tab.Navigator>
-        </NavigationContainer>
+        <RestaurantsContextProvider>
+          <NavigationContainer>
+            <Tab.Navigator
+              screenOptions={createScreenOptions}
+              //To be moved to the tabBarIcons
+              // tabBarOptions={{
+              //   activeTintColor: "tomato",
+              //   inactiveTintColor: "gray",
+              // }}
+            >
+              <Tab.Screen name="Restaurant" component={RestaurantsScreen} />
+              <Tab.Screen name="Map" component={Map} />
+              <Tab.Screen name="Settings" component={Settings} />
+            </Tab.Navigator>
+          </NavigationContainer>
+        </RestaurantsContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>
