@@ -15,8 +15,8 @@ import {
   Address,
 } from "./RestaurantInfoCardStyle";
 
-// type Restaurant = { name: string };
-// type PropsType = { restaurant: Restaurant };
+type Restaurant = { name: string };
+type PropsType = { restaurant: Restaurant };
 
 export const RestaurantInfoCard = ({ restaurant = {} }) => {
   const {
