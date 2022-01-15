@@ -2,7 +2,7 @@ import React, { useState, createContext, useEffect, useMemo } from "react";
 
 import { restaurantsRequest, restaurantsTransform } from "./restaurantsService";
 
-export const RestaurantsContext = createContext();
+export const RestaurantsContext = React.createContext();
 
 export const RestaurantsContextProvider = ({ children }) => {
   const [restaurants, setRestaurants] = useState([]);

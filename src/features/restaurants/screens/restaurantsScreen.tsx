@@ -5,7 +5,7 @@ import styled from "styled-components/native";
 import { RestaurantInfoCard } from "../components/RestaurantInfoCardComponent";
 import { Spacer } from "../../../components/spacer/spacerComponent";
 import { SafeArea } from "../../../components/utility/safeAreaComponent";
-import { RestaurantsContext } from "../../../services/restaurants/restaurantsContex";
+import { RestaurantsContext } from "../../../services/restaurants/restaurantsContext";
 import { ActivityIndicator, Colors } from "react-native-paper";
 
 const Loading = styled(ActivityIndicator)`
